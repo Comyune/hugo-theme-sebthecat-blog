@@ -1,22 +1,14 @@
 {{ if .Params.categories }}
   {{ range $index, $category := .Params.categories }}{{ if gt $index 0 }}{{ i18n "comma" }} {{ end }}
-    <span
-      class="fas fa-folder"
-      aria-hidden="true"
-    ></span>&nbsp;<a
+    <a
       href="{{ "/categories/" | relLangURL }}{{ . | urlize }}/"
       rel="category tag"
-    >
-      {{ . }}
-    </a>
+    >{{ . }}</a>
   {{ end }}
 {{ end }}
 
 {{ if .Params.tags }}
   {{ range $index, $tag := .Params.tags }}
-    {{ if gt $index 0 }}{{ i18n "comma" }} {{ end }}
-
-    <span class="fas fa-tag" aria-hidden="true"></span>&nbsp;
     <a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}/" rel="tag">
       {{ . }}
     </a>

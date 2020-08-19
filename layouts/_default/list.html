@@ -31,7 +31,6 @@
   {{ range $paginator.Pages }}
     {{ .Render "summary" }}
   {{ end }}
-  <h1>TEST</h1>
 
   {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
     {{ partial "pagination.html" . }}
