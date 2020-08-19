@@ -1,0 +1,19 @@
+<header class="blog-header">
+  <div class="container">
+    <div class="logo">
+      <a href="{{ .Site.BaseURL | absURL }}" rel="home" title="SebTheCat.com">
+      </a>
+    </div>
+
+    <div class="content">
+      <h1>SebTheCat<small>.com</small></h1>
+      <p class="lead blog-description">
+        Streamer. Game developer. Software engineer. Cat.
+      </p>
+    </div>
+  </div>
+
+  <div class="container">
+    {{ partial "main-nav.html" . }}
+  </div>
+</header>

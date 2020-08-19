@@ -12,9 +12,10 @@
     "build:cookieconsent": "cp node_modules/@chiiya/haven/dist/haven.umd.min.js assets/js",
     "build:js": "webpack",
     "build": "npm run build:css && npm run build:rtlcss && npm run build:js && npm run build:cookieconsent && npm run clean",
-    "clean": "rm assets/css/style.css.tmp assets/css/style.rtl.css.tmp"
+    "clean": "rm assets/css/style.css.tmp assets/css/style.rtl.css.tmp",
+    "watch": "node-sass --watch --output-style expanded --precision 6 source/scss/style.scss assets/css/style.css"
   },
-  "keywords": "hugo",
+  "keywords": ["hugo"],
   "author": "Alan Orth",
   "license": "CC-BY-3.0",
   "devDependencies": {

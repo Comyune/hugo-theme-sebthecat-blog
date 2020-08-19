@@ -1,0 +1,16 @@
+<nav class="nav blog-nav">
+  <a
+    class="nav-link {{ if .IsHome }}active{{ end }}"
+    href="{{ .Site.BaseURL }}"
+  >Home</a>
+
+  {{- $currentPage := . -}}
+  {{ range .Site.Menus.navbar }}
+  {{ $menuURL := .URL }}
+    <a
+      class="nav-link{{ if or ($currentPage.IsMenuCurrent "navbar" .) ($currentPage.HasMenuCurrent "navbar" .) }} active{{end}}"
+      href="{{ .URL }}"
+      title="{{ .Title }}"
+    >{{ .Name }}</a>
+  {{ end }}
+</nav>

@@ -1,0 +1,9 @@
+<nav class="tag-menu">
+  {{ $page := $.Site.GetPage "/tags" }}
+  {{ range $page.Data.Terms.ByCount }}
+    <a class="tag" href="/tags/{{ .Name | urlize }}.html">
+      {{ .Name }}
+      <span class="count">{{ .Count }}</span>
+    </a>
+  {{ end }}
+</nav>
