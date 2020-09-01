@@ -1,0 +1,144 @@
+@import 'source/scss/variables';
+
+section.blog-main {
+  padding: 2rem 1rem 3rem;
+}
+
+article {
+  margin: 1rem 0;
+  padding-right: 1rem;
+  font-family: $serifFont;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.75em;
+
+  h1,h2,h3,h4,h5,h6 {
+    &, & a {
+      font-family: $headerFont;
+      color: #FFF;
+
+      &:hover { color: $yellow; }
+    }
+  }
+
+  a {
+    color: $yellow;
+    &:hover { color: lighten($yellow, 20%); }
+  }
+
+  strong { font-weight: 600; }
+
+  
+
+  .highlight {
+    margin: 1rem 0 2rem -1.5rem;
+    padding: 1.5rem 0.5rem 0.5rem;
+    border-left: 0.5rem solid $breakoutBorderBg;
+    background: $breakoutBg;
+    box-shadow: $breakoutShadow;
+
+    & > pre { background: $breakoutBg !important; }
+  }
+
+  .inline-svg {
+    display: inline-block;
+    height: 1.15rem;
+    width: 1.15rem;
+    top: -0.15rem;
+    margin: 0 0.25rem;
+    position: relative;
+  }
+  
+  blockquote {
+    padding: 0.5rem 1rem 0;
+    background: rgba(0,0,0,0.1);
+
+    &:before {
+      content: open-quote;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    &:after {
+      content: close-quote;
+      display: block;
+      text-align: right;
+    }
+  }
+  
+  figure img {
+    margin-bottom: 0;
+    max-width: 100%;
+  }
+  figcaption {
+    font-size: 0.6em;
+    font-weight: 600;
+  }
+
+  a.read-more {
+    display: block;
+    margin-top: 1rem;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    font-family: $headerFont;
+    font-size: 0.875em;
+
+    span { color: $lightBlue; }
+  }
+}
+
+article.full {
+  margin-bottom: 3rem;
+
+  footer {
+    margin-top: 4rem; 
+  }
+}
+
+article.summary {
+  header {
+    h2 {
+      margin-bottom: 0;
+      font-size: 1.25rem;
+    }
+  }
+
+  h2 { font-size: 1.25rem; }
+
+  & + article.summary {
+    &:before {
+      margin: 1.5rem 0 1.5rem -2rem;
+      content: ' ';
+      display: block;
+      width: 3rem;
+      height: 0.125rem;
+      background: $breakoutBorderBg;
+    }
+  }
+}
+
+#disqus_thread{
+  background: $darkGrey;
+  padding: 1.5rem;
+  box-shadow: $breakoutShadow;
+}
+
+.blog-post-meta {
+  margin-bottom: 0.5rem;
+  font-size: 0.6em;
+  text-transform: uppercase;
+  font-family: $headerFont;
+
+  a {
+    display: inline-block;
+    color: $red;
+    &:before { content: '['; }
+    &:after { content: ']'; }
+    &:before, &:after { color: $lightBlue; }
+
+    &:hover {
+      color: lighten($red, 20%);
+      &:before, &:after { color: lighten($red, 50%); }
+    }
+  }
+}

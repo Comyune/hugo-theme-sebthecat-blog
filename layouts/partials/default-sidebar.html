@@ -8,19 +8,19 @@
 
   <nav class="social-icons">
     <a href="https://www.youtube.com/channel/UCVQ2Rt-GlX3ptQ94GUtulmQ">
-      <i class="fab fa-youtube"></i>
+      <img src="/fontawesome/youtube.svg" />
     </a>
 
     <a href="https://twitter.com/_SebTheCat_">
-      <i class="fab fa-twitter"></i>
+      <img src="/fontawesome/twitter.svg" />
     </a>
 
     <a href="https://www.twitch.tv/sebthecat_com">
-      <i class="fab fa-twitch"></i>
+      <img src="/fontawesome/twitch.svg" />
     </a>
 
     <a href="https://discord.gg/K8chdpq">
-      <i class="fab fb-discord"></i>
+      <img src="/fontawesome/discord.svg" />
     </a>
   </nav>
 </section>
@@ -28,4 +28,20 @@
 <section class="tags">
   <h2>Popular Topics</h2>
   {{ partial "tag-menu" . }}
+</section>
+
+<section class="recent-posts">
+  <h2>Recent Posts</h2>
+  
+  {{ $num_recent_posts := (index .Site.Params.sidebar "num_recent_posts" | default 5) }}
+  {{ range first $num_recent_posts (where .Site.RegularPages "Section" "in" .Site.Params.mainSections) }}
+    <summary class="recent-post">
+      <a href="{{.RelPermalink}}">
+        {{.Title | markdownify }}
+      </a>
+      <div class="blog-post-meta">
+        {{ partial "meta-terms.html" . }}
+      </div>
+    </summary>      
+  {{ end }}
 </section>

@@ -1,0 +1,64 @@
+@import "variables.scss";
+
+header.blog-header {
+  font-family: $eightBitFont;
+  background: $lightRed;
+  font-smooth: never;
+  -webkit-font-smoothing : none;
+
+  .container {
+    padding-top: 1rem;
+    display: flex;
+    background: $red;
+
+    .logo {
+      margin-right: 2rem;
+      flex-grow: 5;
+      min-height: 426px;
+      min-width: 500px;
+      margin-left: -188px;
+      background: url(/images/cat-logo.png) no-repeat;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-grow: 7;
+      text-shadow: 0 0.2rem 0 $headerShadow;
+      color: $yellow;
+      transform: scale(1,1.1);
+
+      h1 {
+        margin-bottom: 1rem;
+        font-family: $eightBitFont;
+        small { color: $darkestGrey; }
+      }
+    }
+
+    .single-content {
+      padding: 1rem;
+
+      a h3 { color: $darkestGrey; }
+    }
+
+    nav {
+      margin-left: auto;
+      margin-right: 1rem;
+      font-size: 0.8rem;
+
+      a {
+        display: inline-block;
+        padding-bottom: 0.5rem;
+        text-shadow: 0 0.1rem 0 $headerShadow;
+        color: $darkestGrey;
+        margin: 0 0.2rem;
+        transform: scale(1,1.1);
+
+        &.active { border-bottom: 0.6rem solid $darkestGrey; }
+        &:hover { color: darken($lightBlue, 50%); }
+      }
+    }
+  }
+}

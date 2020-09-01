@@ -1,18 +1,11 @@
 <header class="blog-header">
   <div class="container">
-    <div class="logo">
-      <a href="{{ .Site.BaseURL | absURL }}" rel="home" title="SebTheCat.com">
-      </a>
-    </div>
+    <div class="single-content">
+      <h1>{{ .Title | markdownify }}</h1>
 
-    <div class="content">
-      <a href="{{ .Site.BaseURL | absURL }}" rel="home" title="SebTheCat.com">
-        <h1>SebTheCat<small>.com</small></h1>
-      <a>
-
-      <a href="{{ .Site.BaseURL | absURL }}" class="lead blog-description" rel="home" title="SebTheCat.com">
-        Streamer. Game developer. Software engineer. Cat.
-      </a>
+      {{ with .Params.subtitle }}
+        <span class="subtitle">{{.}}</span>
+      {{ end }}
     </div>
   </div>
 

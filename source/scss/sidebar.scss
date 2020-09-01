@@ -1,0 +1,83 @@
+@import "variables.scss";
+
+aside.blog-sidebar {
+  padding: 2rem 0 5rem;
+  max-width: 40%;
+  font-family: $serifFont;
+
+  h2 {
+    font-weight: 100;
+  }
+
+  section {
+    margin: 1rem -0.5rem 1.5rem 0;
+    padding: 0.5rem 1rem 0.5rem;
+    background: $breakoutBg;
+    box-shadow: $breakoutShadow;
+    border-right: 0.5rem $breakoutBorderBg solid;
+  }
+
+  .social-icons {
+    text-align: center;
+    font-size: 3rem;
+
+    a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      color: #FFF;
+
+      &:hover { color: $yellow; }
+
+      img {
+        width: 3rem;
+        height: 3rem;
+        filter: invert(1);
+      }
+    }
+  }
+}
+
+section.tags {
+  nav {
+    font-variant: small-caps;
+    flex-direction: column;
+
+    a {
+      padding: 0.125rem 0;
+      min-width: 48%;
+      display: inline-block;
+      color: $yellow;
+
+      span { 
+        display: inline-block;
+        margin-right: auto;
+        text-align: right;
+        padding-left: 0.125rem;
+        color: $lightBlue;
+        opacity: 0.5;
+      }
+
+      &:hover {
+        color: lighten($yellow, 10%);
+        text-shadow: 0 1px 2px black;
+      }
+    }
+  }
+}
+
+section.recent-posts {
+  .recent-post {
+    margin: 1rem 0;
+    font-size: 0.75em;
+
+    .blog-post-meta {
+      & {
+        font-size: 0.75em;
+        text-transform: uppercase;
+        font-weight: 300;
+        color: $lightBlue;
+      }
+      a { color: $lightGrey; }
+    }
+  }
+}

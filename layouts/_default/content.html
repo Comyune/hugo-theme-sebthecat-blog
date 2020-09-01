@@ -7,7 +7,10 @@
     </h2>
 
     <p class="blog-post-meta">
-      <time {{ .Date.Format "2006-01-02T15:04:05Z07:00" | printf "datetime=%q" | safeHTMLAttr }}>{{ .Date.Format $dateFormat }}</time>
+      <time {{ .Date.Format "2006-01-02T15:04:05Z07:00" | printf "datetime=%q" | safeHTMLAttr }}>
+        {{ .Date.Format $dateFormat }}
+      </time>
+      
       {{ if or (.Params.categories) (.Params.tags) }}
         {{ partial "meta-terms.html" . }}
       {{ end }}
