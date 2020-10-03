@@ -27,12 +27,16 @@
     {{- end -}}
 
     {{ range $pages }}
+    {{ $fill := .Params.fill }}
     <item>
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
 
-      {{- with index (.Resources.ByType "image") 0 -}}
-        <image>{{ .Permalink }}</image>
+      {{- $fill := .Params.fill -}}
+      {{- range .Resources.ByType "image" -}}
+        {{- $resized := .Fill $fill -}}
+        <image>{{ $resized.Permalink }}</image>
+        <originalimage>{{ .Permalink }}</originalimage>
       {{- end -}}
 
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
